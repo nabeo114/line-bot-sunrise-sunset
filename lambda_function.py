@@ -118,7 +118,7 @@ def lambda_handler(event, context):
 
 
 def convert_utc_to_jst(datetime_utc):
-    timestamp_utc = datetime.datetime.strptime(datetime_utc, "%Y-%m-%dT%H:%M:%S%z")
+    timestamp_utc = datetime.datetime.strptime(datetime_utc, '%Y-%m-%dT%H:%M:%S%z')
     timestamp_jst = timestamp_utc.astimezone(gettz('Asia/Tokyo'))
     datetime_jst = datetime.datetime.strftime(timestamp_jst, '%Y-%m-%dT%H:%M:%S%z')
     time_jst = datetime.datetime.strftime(timestamp_jst, '%H:%M:%S')
